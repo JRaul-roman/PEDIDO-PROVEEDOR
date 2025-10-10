@@ -209,57 +209,65 @@
         .selected-product {
             background-color: var(--btn-secondary-bg)22;
         }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+        }
+
+        .input-small {
+            padding: 0.5rem;
+        }
     </style>
 </head>
-<body class="pb-64">
+<body class="pb-32">
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-        <header class="flex flex-row justify-between items-center mb-10">
-            <h1 class="text-4xl sm:text-5xl font-bold title-text">PROVEEDORES</h1>
-            <button id="history-btn" class="btn btn-secondary mt-4 sm:mt-0">Historial de Pedidos</button>
+    <div class="container mx-auto p-2 sm:p-3 lg:p-4">
+        <header class="flex flex-row justify-between items-center mb-6">
+            <h1 class="text-2xl sm:text-3xl font-bold title-text">PROVEEDORES</h1>
+            <button id="history-btn" class="btn btn-secondary mt-2 sm:mt-0 btn-small">Historial de Pedidos</button>
         </header>
 
         <!-- Componente de caja principal -->
-        <main class="box-component">
-            <div id="provider-buttons" class="flex flex-wrap justify-center gap-3 mb-8"></div>
+        <main class="box-component" style="padding: 1rem;">
+            <div id="provider-buttons" class="flex flex-wrap justify-center gap-2 mb-6"></div>
 
-            <div id="product-display" class="bg-inner rounded-xl p-6 min-h-[300px]">
-                <h2 id="provider-name" class="text-2xl font-semibold mb-4 text-color">Selecciona un proveedor</h2>
-                <ul id="product-list" class="space-y-1 text-color-secondary mb-6">
-                     <li class="italic p-2">Los productos aparecerán aquí...</li>
+            <div id="product-display" class="bg-inner rounded-xl p-4 min-h-[200px]">
+                <h2 id="provider-name" class="text-xl font-semibold mb-3 text-color">Selecciona un proveedor</h2>
+                <ul id="product-list" class="space-y-1 text-color-secondary mb-4">
+                     <li class="italic p-1">Los productos aparecerán aquí...</li>
                 </ul>
                 
                 <div id="product-actions" class="hidden">
                     <form id="add-product-form">
-                        <h3 class="text-xl font-semibold mb-3 text-color">Añadir Producto</h3>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <input type="text" id="new-product-name" placeholder="Nombre del nuevo producto" class="input-field" required>
-                            <button type="submit" class="btn btn-secondary">
+                        <h3 class="text-lg font-semibold mb-2 text-color">Añadir Producto</h3>
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <input type="text" id="new-product-name" placeholder="Nombre del nuevo producto" class="input-field input-small" required>
+                            <button type="submit" class="btn btn-secondary btn-small">
                                 Añadir Producto
                             </button>
                         </div>
                     </form>
-                    <div class="flex flex-wrap gap-4 mt-4">
-                         <button id="save-order-btn" class="btn btn-primary flex-grow sm:flex-grow-0">Guardar Pedido Actual</button>
-                         <button id="reset-quantities-btn" class="btn btn-tertiary flex-grow sm:flex-grow-0">Resetear Cantidades</button>
+                    <div class="flex flex-wrap gap-2 mt-3">
+                         <button id="save-order-btn" class="btn btn-primary flex-grow sm:flex-grow-0 btn-small">Guardar Pedido Actual</button>
+                         <button id="reset-quantities-btn" class="btn btn-tertiary flex-grow sm:flex-grow-0 btn-small">Resetear Cantidades</button>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-[var(--box-border-color)] flex flex-wrap items-center gap-4">
-                <button id="add-provider-btn" class="btn btn-primary w-full sm:w-auto">Nuevo Proveedor</button>
-                <button id="delete-provider-btn" class="btn btn-danger w-full sm:w-auto hidden">Eliminar Proveedor</button>
+            <div class="mt-4 pt-4 border-t border-[var(--box-border-color)] flex flex-wrap items-center gap-2">
+                <button id="add-provider-btn" class="btn btn-primary w-full sm:w-auto btn-small">Nuevo Proveedor</button>
+                <button id="delete-provider-btn" class="btn btn-danger w-full sm:w-auto hidden btn-small">Eliminar Proveedor</button>
             </div>
             
-            <div id="selected-products-section" class="mt-8 pt-6 border-t border-[var(--box-border-color)]">
-                <h2 class="text-2xl font-semibold mb-4 text-color">Resumen del Pedido Actual</h2>
+            <div id="selected-products-section" class="mt-6 pt-4 border-t border-[var(--box-border-color)]">
+                <h2 class="text-xl font-semibold mb-3 text-color">Resumen del Pedido Actual</h2>
                 <ul id="selected-products-list" class="space-y-1">
                     <li class="italic text-color-secondary">Selecciona un proveedor para ver el resumen de su pedido.</li>
                 </ul>
             </div>
         </main>
 
-        <footer class="text-center mt-10">
+        <footer class="text-center mt-6">
             <div class="flex justify-center flex-wrap gap-4">
                  <button id="show-export-modal-btn" class="btn btn-tertiary">Exportar Pedido</button>
                  <button id="print-btn" class="btn btn-tertiary">Imprimir Pedido</button>
@@ -366,7 +374,8 @@
             "EL POZO": ["MORTADELA PAVO ACEITUNAS", "MORTADELA PAVO", "IMPERIAL CLASICA", "JAMON YORK MAXI", "PAVO SANDWICH"],
             "LA RODA": ["AGRADO CHAMPU", "SERVILLETAS CELLIO", "AMBIPUR 3VOLUTION", "OCEDAR", "ASEVI LAVALANAS", "FRIEGASUELOS ABUELA", "NICKY PAÑUELOS", "AGUARRAS JAFEP"],
             "LOS GALANES": ["CHORIZO CASERO", "ACHORIZADO", "SALCHICHON ROLFO", "SALCHICHON IBERICO", "CHORIZO IBERICO", "LOMO CEBO", "LOMO BELLOTA", "CINTA LOMO ADOBADA", "QUESO ACEITE", "CHOPPED CRISMONA", "SALCHICHON DE PAVO"],
-            "TOLEDO": ["PALETA COCIDA", "JAMON COCIDO RESERVA", "PIC KAMPER", "EMPANADA", "SALAMI", "MORTADELA SICILiana", "PAVO A LAS FINAS HIERBAS", "LUNCH DE PAVO"]
+            "TOLEDO": ["PALETA COCIDA", "JAMON COCIDO RESERVA", "PIC KAMPER", "EMPANADA", "SALAMI", "MORTADELA SICILiana", "PAVO A LAS FINAS HIERBAS", "LUNCH DE PAVO"],
+            "MUSICO": ["ALCACHOFAS 400G", "ALMEJAS DEL PACIFICO 450GR FROXA", "ALMEJAS DEL PACIFICO FROXA 1KG", "ANILLA DE CALAMAR ENHARINADA MEGAMAR 500G", "ANILLA DE POTA FINAMAR 550GR", "BACALADILLA", "BACALAO", "BOQUERONES", "BOQUERONES CONGELADOS 1KG", "CROQUETAS DE JAMON SERRANO 500GR", "ENSALADILLA EXTRA 1KG", "ENSALADILLA EXTRA 400GR", "ESPINACAS MAHESO 400GR", "FILETES MERLUZA PESCANOVA BABY 400GR", "FILETES MERLUZA SIN PIEL EL MUSICO 0,8KG", "GAMBA PELADA CRUDA 1KG", "GAMBA PELADA EGUILLEN 30/50 600GR", "GAMBAS GABARDINA CLAVO 500GR", "GUISANTES EXTRAFINOS 1KG", "GUISANTES EXTRAFINOS 400GR", "JUDIAS VERDES PLANA 400G", "JUDIAS VERDES PLANAS 1KG", "LUBINA", "MAHESITOS JAMON SERRANO 500GR", "MENESTRA IMPERIAL 1KG", "MENESTRA IMPERIAL 400GR", "MINIEMPANADILLAS DE ATUN MAESO 330GR", "NUGGETS DE POLLO FRIPOZO 300GR", "PATATAS PREFITAS MAHESO 1KG", "PREPARADO DE PAELLA CASTELLAR 340GR", "REVOLTILLO DE AJETES MAHESO 500GR", "SAN JACOBOS CLAVO", "SOPA MARISCO EXTRA BASCONA 400GR", "TEMPURA", "TEMPURA VERDURAS 400G", "TRONQUITO DE SURIMI FROXA 250GR", "PESKITOS"]
         };
         let providersData = {};
         let orderHistory = {};
