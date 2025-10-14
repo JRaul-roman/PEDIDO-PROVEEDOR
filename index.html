@@ -285,6 +285,7 @@
                  <button id="show-export-modal-btn" class="btn btn-tertiary">Exportar Pedido</button>
                  <button id="print-btn" class="btn btn-tertiary">Imprimir Pedido</button>
                  <button id="reset-all-btn" class="btn btn-tertiary">Resetear Todo</button>
+                 <button id="reset-providers-btn" class="btn btn-danger">Restablecer Proveedores por Defecto</button>
             </div>
             <p class="text-color-secondary text-sm mt-6">&copy; 2024 - Aplicación de Proveedores</p>
         </footer>
@@ -381,7 +382,7 @@
         // --- Lógica de Datos ---
         const defaultProvidersData = {
             "BOLAÑOS": ["CHOPPED CRISMONA", "DELISANDWICH", "IBERITOS", "PAVO CON OLIVAS"],
-            "CAMPOFRIO": ["CHOPEED DE LATA CAMPOFRIO", "CHORIZO REVILLA", "GAZPACHO ALVALLE", "JAMON COCIDO PAVO", "JAMONGUS SALCHICHAS", "MAXI PECHUGA PAVO", "MINIFUET", "MORTADELA ITALIANA", "PALETA COCIDA SANDWICH", "PÀTE 3 SABORES", "PECHUGA DE PAVO", "PECHUGA PAVO BRASEADA", "SALCHICHAS CAMPESAN", "SALCHICHAS NORMALES", "SALCHICHAS OSCAR MAYER", "SALCHICHON CUMBRE REAL", "TAQUITOS JAMON", "TIRAS DE JAMON", "TRANCHETTES"],
+            "CAMPOFRIO": ["CHOPEED DE LATA CAMPOFRIO", "CHORIZO REVILLA", "GAZPACHO ALVALLE", "JAMON COCIDO PAVO", "JAMONGUS SALCHICHAS", "MAXI PECHUGA PAVO", "MINIFUET", "Mini-Fuett", "MORTADELA ITALIANA", "PALETA COCIDA SANDWICH", "PÀTE 3 SABORES", "PECHUGA DE PAVO", "PECHUGA PAVO BRASEADA", "SALCHICHAS CAMPESAN", "SALCHICHAS NORMALES", "SALCHICHAS OSCAR MAYER", "SALCHICHON CUMBRE REAL", "TAQUITOS JAMON", "TIRAS DE JAMON", "TRANCHETTES"],
             "DIALVAL": ["BACALAO 30/40 PARTIDO", "BOLSAS PEQUEÑAS PLASTICO", "CENTROS JAMON", "CHOPPED CRISMONA", "LOMO DE SAJONIA", "LOMO RESERVA ESPAÑA", "PAPEL PARAFINADO", "ROLLOS TERMICOS ORDENADOR", "ROLLOS TERMICOS PESAR", "SALCHICHON CUMBRE REAL", "SALCHICHON ROLFO", "TARRINA GRANDE ACEITUNAS", "TARRINA H24 LONCHEADO", "TARRINA PEQUEÑA ACEITUNAS", "TOMATE CIDACOS CUBITO G", "TOMATE CIDACOS CUBITO P", "TOMATE CIDACOS ENTERO G", "TOMATE CIDACOS ENTERO P", "TOMATE CIDACOS TRITURADO G", "TOMATE CIDACOS TRITURADO P"],
             "DONOSO": ["ANCHODINA", "CHOPPED CRISMONA", "IMPERIAL EL POZO", "JAMON DE CEBO", "MORTADELA DE ACEITUNAS", "PAVO TRUFADO", "QUESO DE BURGOS X 2", "QUESO DE BURGOS X 3", "QUESO FRUTOS SECOS", "QUESO VENTERO", "SALMON AHUMADO", "TORREZNOS"],
             "EL POZO": ["IMPERIAL CLASICA", "JAMON YORK MAXI", "MORTADELA PAVO", "MORTADELA PAVO ACEITUNAS", "PAVO SANDWICH"],
@@ -452,6 +453,7 @@
             const addProviderBtn = document.getElementById('add-provider-btn');
             const resetAllBtn = document.getElementById('reset-all-btn');
             const deleteProviderBtn = document.getElementById('delete-provider-btn');
+            const resetProvidersBtn = document.getElementById('reset-providers-btn');
             
             // Modales
             const addProviderModal = document.getElementById('add-provider-modal');
